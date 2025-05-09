@@ -1,117 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to NACH Mandate (Guarantor)</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            height: 100vh;
-            flex-direction: column;
-            padding-top: 20px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to NACH Mandate (Guarantor)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        h1 {
-            color: #007BFF;
-            font-size: 2.5em;
-            margin-bottom: 30px;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-        .form-container {
-            width: 80%;
-            max-width: 600px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.9);
+      width: 100%;
+      max-width: 600px;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
 
-        .form-container label {
-            display: block;
-            margin: 8px 0;
-            font-weight: bold;
-        }
+    h1 {
+      color: #0a3d62;
+      text-align: center;
+      font-size: 2em;
+      margin: 20px 0;
+    }
 
-        .form-container input[type="text"],
-        .form-container input[type="number"],
-        .form-container input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
+    .section-title {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #2f3640;
+      margin-top: 20px;
+    }
 
-        .form-container input[type="submit"] {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: 500;
+    }
 
-        .form-container input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
+    input[type="text"],
+    input[type="number"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
 
-        .form-container .section-title {
-            font-size: 1.3em;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-    </style>
+    input[type="submit"] {
+      background-color: #0984e3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 20px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0652dd;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5em;
+      }
+
+      .overlay {
+        padding: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <h1>WELCOME TO NACH MANDATE (Guarantor)</h1>
+  <h1>WELCOME TO NACH MANDATE (Guarantor)</h1>
+  <h2> Guarantor Portal </h1>
 
-    <div class="form-container">
-        <form id="mandateForm" action="confirmation.html" method="POST">
-            <div class="section-title">== ENTER PERSONAL DETAILS ==</div>
+  <div class="overlay">
+    <form id="mandateForm" action="confirmation.html" method="POST">
+      <div class="section-title">== ENTER PERSONAL DETAILS ==</div>
 
-            <label for="primaryApplicant">Primary Applicant:</label>
-            <input type="text" id="primaryApplicant" name="primaryApplicant" required>
+      <label for="primaryApplicant">Primary Applicant:</label>
+      <input type="text" id="primaryApplicant" name="primaryApplicant" required>
 
-            <label for="primaryContact">Primary Applicant Contact:</label>
-            <input type="number" id="primaryContact" name="primaryContact" required>
+      <label for="primaryContact">Primary Applicant Contact:</label>
+      <input type="number" id="primaryContact" name="primaryContact" required>
 
-            <label for="guarantorName">Guarantor Name (As per PAN):</label>
-            <input type="text" id="guarantorName" name="guarantorName" required>
+      <label for="guarantorName">Guarantor Name (As per PAN):</label>
+      <input type="text" id="guarantorName" name="guarantorName" required>
 
-            <label for="guarantorContact">Guarantor Contact:</label>
-            <input type="number" id="guarantorContact" name="guarantorContact" required>
+      <label for="guarantorContact">Guarantor Contact:</label>
+      <input type="number" id="guarantorContact" name="guarantorContact" required>
 
-            <label for="panNumber">PAN Number:</label>
-            <input type="text" id="panNumber" name="panNumber" required>
+      <label for="panNumber">PAN Number:</label>
+      <input type="text" id="panNumber" name="panNumber" required>
 
-            <div class="section-title">== ENTER BANK DETAILS (For Guarantor) ==</div>
+      <div class="section-title">ENTER BANK DETAILS (For Guarantor) </div>
 
-            <label for="accountNumber">Account Number:</label>
-            <input type="number" id="accountNumber" name="accountNumber" required>
+      <label for="accountNumber">Account Number:</label>
+      <input type="number" id="accountNumber" name="accountNumber" required>
 
-            <label for="ifscCode">IFSC Code:</label>
-            <input type="number" id="ifscCode" name="ifscCode" required>
+      <label for="ifscCode">IFSC Code:</label>
+      <input type="text" id="ifscCode" name="ifscCode" required>
 
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
 
-    <script>
-        // Form submission handling
-        document.getElementById('mandateForm').addEventListener('submit', function(event) {
-            // Prevent actual submission to simulate error message on next page
-            event.preventDefault();
-
-            // Redirect to the next page and display the error message
-            window.location.href = "confirmation.html";
-        });
-    </script>
+  <script>
+    document.getElementById('mandateForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      window.location.href = "confirmation.html";
+    });
+  </script>
 
 </body>
 </html>
